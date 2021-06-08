@@ -3,7 +3,7 @@ import React from 'react';
 export class MovieView extends React.Component {
 
   render() {
-    const { movie } = this.props;
+    const { movie, onBackClick } = this.props;
 
     return (
       <div className="movie-view">
@@ -20,7 +20,7 @@ export class MovieView extends React.Component {
         </div>
         <button onClick={() => { onBackClick(null); }}>Back</button>
 
-       </div>
+      </div>
     );
   }
 }
