@@ -1,0 +1,125 @@
+var helpers = require("../../../../../../../../../AppData/Roaming/npm/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var _s = $RefreshSig$();
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.RegistrationView = RegistrationView;
+var _react = _interopRequireDefault(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr && (typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]);
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s1, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s1 = _i.next()).done); _n = true){
+            _arr.push(_s1.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+function RegistrationView() {
+    _s();
+    var _useState = useState(''), _useState2 = _slicedToArray(_useState, 2), username = _useState2[0], setUsername = _useState2[1];
+    var _useState3 = useState(''), _useState4 = _slicedToArray(_useState3, 2), password = _useState4[0], setPassword = _useState4[1];
+    var _useState5 = useState(''), _useState6 = _slicedToArray(_useState5, 2), email = _useState6[0], setEmail = _useState6[1];
+    var _useState7 = useState(''), _useState8 = _slicedToArray(_useState7, 2), birthdate = _useState8[0], setBirthdate = _useState8[1];
+    var handleSubmit = function handleSubmit1(e) {
+        e.preventDefault();
+        console.log(username, password, email, birthdate);
+        props.onRegister(username);
+    };
+    return(/*#__PURE__*/ _react["default"].createElement("form", null, /*#__PURE__*/ _react["default"].createElement("label", null, "Username:", /*#__PURE__*/ _react["default"].createElement("input", {
+        type: "text",
+        value: username,
+        onChange: function onChange(e) {
+            return setUsername(e.target.value);
+        }
+    })), /*#__PURE__*/ _react["default"].createElement("label", null, "Password:", /*#__PURE__*/ _react["default"].createElement("input", {
+        type: "password",
+        value: password,
+        onChange: function onChange(e) {
+            return setPassword(e.target.value);
+        }
+    })), /*#__PURE__*/ _react["default"].createElement("label", null, "email:", /*#__PURE__*/ _react["default"].createElement("input", {
+        type: "password",
+        value: password,
+        onChange: function onChange(e) {
+            return setEmail(e.target.value);
+        }
+    })), /*#__PURE__*/ _react["default"].createElement("label", null, "birthdate:", /*#__PURE__*/ _react["default"].createElement("input", {
+        type: "password",
+        value: password,
+        onChange: function onChange(e) {
+            return setBirthdate(e.target.value);
+        }
+    })), /*#__PURE__*/ _react["default"].createElement("button", {
+        type: "submit",
+        onClick: handleSubmit
+    }, "Submit")));
+}
+_s(RegistrationView, "EkoedRqd267c4O2uptJWgm9Nkj0=");
+_c = RegistrationView;
+RegistrationView.propTypes = {
+    SignIn: _propTypes["default"].func.isRequired
+}; /*
+      "Username": "username string",
+                            "Password": "password example",
+                            "Email": "domidomiddomi@mail.com",
+                            "Birthday": "1990/01/01" (date format),
+                            "FavMovies" : []
+
+                            */ 
+var _c;
+$RefreshReg$(_c, "RegistrationView");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

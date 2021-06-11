@@ -4,6 +4,7 @@ import axios from 'axios';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { RegistrationView } from '../registration-view/registration-view';
 
 export class MainView extends React.Component {
 
@@ -13,12 +14,13 @@ export class MainView extends React.Component {
           movies: [
           ],
           selectedMovie: null,
-          user: null
+          user: null,
+          register: false
         };
       }
 
       componentDidMount(){
-        axios.get('https://movie-api-1.herokuapp.com//movies')  
+        axios.get('https://movie-api-1.herokuapp.com/movies')  
           .then(response => {
             this.setState({
               movies: response.data
@@ -54,9 +56,9 @@ export class MainView extends React.Component {
         }
 
     render() {
-      const { movies, selectedMovie,  } = this.state;
+      const { movies, selectedMovie, register, user} = this.state;
 
-      if (!register) return <registration-view SignIn={register => this.SignIn(register)} />; 
+      if (!register) return <RegistrationView SignIn={register => this.SignIn(register)} />; 
 
       /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
       if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;  
