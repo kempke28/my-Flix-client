@@ -40,17 +40,17 @@ export function RegistrationView(props) {
               <Form.Control type="email" placeholder="Enter your email" value={email} onChange={e => setEmail(e.target.value)}></Form.Control>
             </Form.Group>
 
-          <Form.Group controlId="Birth date">
-            <Form.label>Birth Date</Form.label>
-            <Form.Control type="date" value={birthDate} onChange={e => setBirthDate(e.target.value)}></Form.Control>
-          </Form.Group>
+            <Form.Group controlId="Birth date">
+              <Form.label>Birth Date</Form.label>
+              <Form.Control type="date" value={birthDate} onChange={e => setBirthDate(e.target.value)}></Form.Control>
+            </Form.Group>
             
             <div className="mb-2">
               <Button variant="primary" size="lg">Submit</Button>
             </div>
 
           </Form>
-          
+
         </div>
       );
     }
