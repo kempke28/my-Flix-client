@@ -6,8 +6,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Navbar, Container, Nav, Row, Col  } from 'react-bootstrap';
 
 import './main-view.scss';
 
@@ -100,25 +99,25 @@ export class MainView extends React.Component {
           </Container>
         </Navbar>
 
-        <Container>
-        <div className="main-view">
+        
+        <Row className="justify-content-md-center">
           {selectedMovie
             ? (
-            <Row className="justify-content-md-center">
-              <col md={8}>
+              <Col md={8}>
               <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-              </col>
-            </Row>
+              </Col>
             )
+            
             : movies.map(movie => (
+              <Col md={4}>
               <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
+              </Col>
             ))
           }
+        </Row>
+
         </div>
-        </Container>
-
-      </div>
-
+        
       );
     }
   
