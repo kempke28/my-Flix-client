@@ -40142,16 +40142,6 @@ function _interopRequireDefault(obj) {
         "default": obj
     };
 }
-function _defineProperty(obj, key, value) {
-    if (key in obj) Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-    });
-    else obj[key] = value;
-    return obj;
-}
 function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
 }
@@ -40227,17 +40217,9 @@ function _getPrototypeOf(o) {
 var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
     _inherits(ProfileView2, _React$Component);
     var _super = _createSuper(ProfileView2);
-    function ProfileView2(props) {
-        var _this;
+    function ProfileView2() {
         _classCallCheck(this, ProfileView2);
-        _this = _super.call(this, props);
-        _this.state = {
-            userName: "",
-            password: "",
-            birthday: "",
-            email: ""
-        };
-        return _this;
+        return _super.apply(this, arguments);
     }
     _createClass(ProfileView2, [
         {
@@ -40258,42 +40240,9 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
             }
         },
         {
-            key: "updateUser",
-            value: function updateUser(user, token) {
-                _axios["default"].put("https://movie-api-1.herokuapp.com/users/".concat(user), {
-                    Username: this.state.userName,
-                    Password: this.state.password,
-                    Email: this.state.email,
-                    Birthday: this.state.birthday
-                }, {
-                    headers: {
-                        Authorization: "Bearer ".concat(token)
-                    }
-                }).then(function(response) {
-                    var data = response.data;
-                    localStorage.setItem("user", data.Username);
-                    var userData = JSON.parse(localStorage.getItem('userData'));
-                    userData.Birthday = data.Birthday;
-                    userData.Email = data.Email;
-                    userData.Password = data.Password;
-                    localStorage.setItem('userData', JSON.stringify(userData));
-                })["catch"](function(error) {
-                    console.log(error.response.data);
-                });
-            }
-        },
-        {
-            key: "handleChange",
-            value: function handleChange(e) {
-                var _e$target = e.target, name = _e$target.name, value = _e$target.value;
-                this.setState(_defineProperty({
-                }, name, value));
-            }
-        },
-        {
             key: "render",
             value: function render() {
-                var _this2 = this;
+                var _this = this;
                 var _this$props = this.props, user = _this$props.user, onBackClick = _this$props.onBackClick, token = _this$props.token;
                 return(/*#__PURE__*/ _react["default"].createElement("div", null, /*#__PURE__*/ _react["default"].createElement("div", {
                     className: "user"
@@ -40319,55 +40268,7 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                     className: "label"
                 }, "Day born: "), /*#__PURE__*/ _react["default"].createElement("span", {
                     className: "value"
-                }, user.Birthday)), /*#__PURE__*/ _react["default"].createElement("div", {
-                    className: "user"
-                }, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "user: "), /*#__PURE__*/ _react["default"].createElement("input", {
-                    className: "value",
-                    name: "userName",
-                    type: "text",
-                    value: this.state.userName,
-                    onChange: function onChange(e) {
-                        return _this2.handleChange(e);
-                    }
-                })), /*#__PURE__*/ _react["default"].createElement("div", {
-                    className: "user"
-                }, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "password: "), /*#__PURE__*/ _react["default"].createElement("input", {
-                    className: "value",
-                    name: "password",
-                    type: "text",
-                    value: this.state.password,
-                    onChange: function onChange(e) {
-                        return _this2.handleChange(e);
-                    }
-                })), /*#__PURE__*/ _react["default"].createElement("div", {
-                    className: "user"
-                }, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "email: "), /*#__PURE__*/ _react["default"].createElement("input", {
-                    className: "value",
-                    name: "email",
-                    type: "text",
-                    value: this.state.email,
-                    onChange: function onChange(e) {
-                        return _this2.handleChange(e);
-                    }
-                })), /*#__PURE__*/ _react["default"].createElement("div", {
-                    className: "user"
-                }, /*#__PURE__*/ _react["default"].createElement("span", {
-                    className: "label"
-                }, "Day born: "), /*#__PURE__*/ _react["default"].createElement("input", {
-                    className: "value",
-                    name: "birthday",
-                    type: "date",
-                    value: this.state.birthday,
-                    onChange: function onChange(e) {
-                        return _this2.handleChange(e);
-                    }
-                })), /*#__PURE__*/ _react["default"].createElement("div", null, /*#__PURE__*/ _react["default"].createElement("ul", null, user.FavMovies.map(function(value, index) {
+                }, user.Birthday)), /*#__PURE__*/ _react["default"].createElement("div", null, /*#__PURE__*/ _react["default"].createElement("ul", null, user.FavMovies.map(function(value, index) {
                     return(/*#__PURE__*/ _react["default"].createElement("li", {
                         key: index
                     }, value));
@@ -40375,15 +40276,9 @@ var ProfileView1 = /*#__PURE__*/ function(_React$Component) {
                     variant: "info",
                     className: "my-3",
                     onClick: function onClick() {
-                        return _this2.deregister(user.Username, token);
+                        return _this.deregister(user.Username, token);
                     }
                 }, "Delete account"), /*#__PURE__*/ _react["default"].createElement(_Button["default"], {
-                    variant: "info",
-                    className: "my-3",
-                    onClick: function onClick() {
-                        return _this2.updateUser(user.Username, token);
-                    }
-                }, "Update User"), /*#__PURE__*/ _react["default"].createElement(_Button["default"], {
                     variant: "info",
                     className: "my-3",
                     onClick: function onClick() {
