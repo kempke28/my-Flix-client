@@ -2,9 +2,7 @@
 import React, {useState} from "react";
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import axios from 'axios';
-
+import Button from 'react-bootstrap/Button'
 
 export function RegistrationView(props) {
 
@@ -16,21 +14,9 @@ export function RegistrationView(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://movie-api-1.herokuapp.com/users', {
-        Username: username,
-        Password: password,
-        Email: email,
-        BirthDay : birthDate
-      })
-      .then(response => {
-        const data = response.data;
-        console.log(data);
-        window.open('/', '_self');
-      })
-      .catch(e => {
-        console.log('error registering the user')
-      });
-  }  
+        console.log(username, password, email, birthDate);
+        props.SignIn(username);
+      }
 
       return (
         <div>
@@ -69,9 +55,9 @@ export function RegistrationView(props) {
       );
     }
 
-    // RegistrationView.propTypes = {
-    //     SignIn: PropTypes.func.isRequired
-    //   };
+    RegistrationView.propTypes = {
+        SignIn: PropTypes.func.isRequired
+      };
 
 /*
       "Username": "username string",
