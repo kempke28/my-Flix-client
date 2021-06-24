@@ -31,14 +31,14 @@ export class MovieCard extends React.Component {
     const { movie, userData, token } = this.props;
 
     return (
+
       <CardDeck>
         <Card className="movie-card" style={{ width: '18rem' }}>
           <Card.Header>{movie.Title}</Card.Header>
           <Card.Img variant="top" src={movie.ImagePath} />
           <Card.Body>
-            <Card.Text>{movie.Description}</Card.Text>
-            <Link to={`/movies/${movie._id}`}></Link>
-            <Button variant="link">Open</Button>
+            <Card.Text width="30ch">{movie.Description}</Card.Text>
+            <Link to={`/movies/${movie._id}`}>Open</Link>
             <Button onClick={()=>this.addFavoriteMovie(userData, token, movie)}>Add to your favorites</Button>
           </Card.Body>
         </Card>

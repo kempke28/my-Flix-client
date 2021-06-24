@@ -116,7 +116,7 @@ export class MainView extends React.Component {
         //check path="/" can I add path="/movies"
     render() {
 
-      const { movies, user, userData, token} = this.state;
+      const { movies, user, userData, token, onLoggedOut } = this.state;
       
       return (
         
@@ -126,13 +126,12 @@ export class MainView extends React.Component {
           <Container>
           <Navbar.Brand href="/">Movies</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/movies">Movies</Nav.Link>
+            <Nav.Link href="/">Movies</Nav.Link>
             <Nav.Link href="/user">User account</Nav.Link>
             {!user && <Nav.Link href="/register">Register</Nav.Link>}   
             {user == null ?
-            <Nav.Link href="/login">Log In</Nav.Link>:
-            <Nav.Link href="#logout">Log Out</Nav.Link>}
-                    
+            <Nav.Link href="/login" >Log In</Nav.Link>: 
+            <Nav.Link href="#logout" onClick={() => this.onLoggedOut(null)}>Log Out</Nav.Link>}               
           </Nav>
           </Container>
         </Navbar>
@@ -188,7 +187,7 @@ export class MainView extends React.Component {
 
 
 
-          <Route path="/directors/:name" render={({ match, history }) => {
+          <Route path="/director/:name" render={({ match, history }) => {
             if (!user) return 
             <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
@@ -202,16 +201,17 @@ export class MainView extends React.Component {
             />
 
 
-          <Route path="/genres/:name" render={({ match, history }) => {
+          <Route path="/genre/:name" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
             if (movies.length === 0) return <div className="main-view" />;
             return (
             <Col md={8}>
-              <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
+              <GenreView Genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
             </Col>
             )}} />
+
 
           <Route path="/user" render={({ match, history }) => {
             if (!user) return <Col>
