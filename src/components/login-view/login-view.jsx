@@ -26,7 +26,7 @@ export function LoginView(props) {
   };
 
   return (
-    //Creating nice box username with Bootsap
+    //Creating nice box username with Bootsrap
     <Form>
 
       <h1>Log in, please</h1>
