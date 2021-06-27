@@ -19,6 +19,9 @@ export class ProfileView extends React.Component {
     };
   }
 
+
+
+
   deregister(userName, token) {
     axios.delete(`https://movie-api-1.herokuapp.com/users/${userName}`, {
       headers: { Authorization: `Bearer ${token}`}
