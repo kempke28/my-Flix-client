@@ -28855,7 +28855,7 @@ function _typeof(obj) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.MovieView = void 0;
+exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
@@ -28973,7 +28973,8 @@ var MovieView1 = /*#__PURE__*/ function(_React$Component) {
     ]);
     return MovieView2;
 }(_react["default"].Component);
-exports.MovieView = MovieView1;
+var _default = MovieView1;
+exports["default"] = _default;
 MovieView1.propTypes = {
     movie: _propTypes["default"].shape({
         Title: _propTypes["default"].string,
@@ -28986,22 +28987,7 @@ MovieView1.propTypes = {
             Name: _propTypes["default"].string
         })
     }).isRequired
-}; /*
-                            "Genre": {
-                                "Name": "Genre type",
-                                "Description": "a small description of the genre"
-                            },
-                            "Director": {
-                                "Name": "name director",
-                                "Bio": "Small Bio from director"
-                            },
-                            "_id": "60a8cd5037f59be3e29b1c9e", Normally generated when movie is created ramdonly
-                            "Title": "movie name",
-                            "Description": "description from the movie, or sinopsis",
-                            "ImagePath": "link to the image",
-                            "ForKids": true,
-                            "featured": "if its featured in cinemas or not"
-*/ 
+};
 
   helpers.postlude(module);
 } finally {

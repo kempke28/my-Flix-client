@@ -73,6 +73,7 @@ export class ProfileView extends React.Component {
       const { user, onBackClick, token, FavMovies} = this.props;
 
       return(
+
         <div>
           <div className="user">
           <span className="label">user: </span>

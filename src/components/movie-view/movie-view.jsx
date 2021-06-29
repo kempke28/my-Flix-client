@@ -4,7 +4,9 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card'
 
-export class MovieView extends React.Component {
+class MovieView extends React.Component {
+
+  //constructor(props) 
 
   render() {
     const { movie, onBackClick } = this.props;
@@ -32,9 +34,11 @@ export class MovieView extends React.Component {
 
       </Card.Body>
     </Card>
-    )
+    );
   } 
 }
+
+export default MovieView;
 
 
 MovieView.propTypes = {
@@ -50,22 +54,3 @@ MovieView.propTypes = {
     })
   }).isRequired
 };
-  
-
-
-/*
-                            "Genre": {
-                                "Name": "Genre type",
-                                "Description": "a small description of the genre"
-                            },
-                            "Director": {
-                                "Name": "name director",
-                                "Bio": "Small Bio from director"
-                            },
-                            "_id": "60a8cd5037f59be3e29b1c9e", Normally generated when movie is created ramdonly
-                            "Title": "movie name",
-                            "Description": "description from the movie, or sinopsis",
-                            "ImagePath": "link to the image",
-                            "ForKids": true,
-                            "featured": "if its featured in cinemas or not"
-*/
