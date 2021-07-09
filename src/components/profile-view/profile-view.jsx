@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import "../profile-view/profile-view.scss";
 
 export class ProfileView extends React.Component {
+
   constructor(props)
   {
     super(props);
@@ -122,15 +123,13 @@ export class ProfileView extends React.Component {
           ))}
         </ListGroup>
         
-        
-
           <Button variant="info" className="my-3" onClick={()=>this.deregister(user.Username, token)}>Delete account</Button>
           <Button variant="info" className="my-3" onClick={()=>this.updateUser(user.Username, token)}>Update User</Button>
           <Button variant="info" className="my-3" onClick={()=>onBackClick()}>Back</Button>
 
       </div>
 
-      );
+    );
   }
 }
 

@@ -67,11 +67,9 @@ class MainView extends React.Component {
     })
     .then(response => {
       console.log('Success');
-      this.props.setUser
-        (response.data);
-      });
-      localStorage.setItem('userData', JSON.stringify(response.data))
-
+      this.props.setUser(response.data);
+      localStorage.setItem('userData', JSON.stringify(response.data));
+      })
     .catch(function (error) {
       console.log(error);
     });
@@ -87,6 +85,7 @@ class MainView extends React.Component {
   
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
+    localStorage.setItem('userData', JSON.stringify(authData.user));
     this.props.setUser(authData.token, authData.user.Username);  //this.setState
     this.getMovies(authData.token);
   }
@@ -225,7 +224,7 @@ class MainView extends React.Component {
 }
 
 let mapStateToProps = state => {
-  return { movies: state.movies }
+  return { movies: state.movies, user: state.user }
 }
 
   export default connect(mapStateToProps, { setMovies, setUser } )(MainView);

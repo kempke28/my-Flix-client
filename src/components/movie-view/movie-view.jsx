@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card'
 
-class MovieView extends React.Component {
+export class MovieView extends React.Component {
 
   //constructor(props) 
 
