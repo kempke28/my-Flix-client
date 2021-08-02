@@ -5,11 +5,11 @@ Little stack web app using MERN. Shows a list of movies with description, direct
 
 ## More in detail.
 
-Apart from the MERN basis
-Using axios as a Authroization library
-parcel webpack for deveolpment
-babel for transcription
-some Bootsrap
+Apart from the MERN basis,
+using axios as a Authroization library,
+parcel webpack for deveolpment,
+babel for transcription,
+some Bootsrap.
 
 Dependencies used in the project.
 
